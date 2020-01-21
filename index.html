@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Note App</title>
   </head>
   <body>
-    <h1>Notes App</h1>
-    <h2>Take notes and never forget</h2>
-    <input id="search-test" type="text" placeholder="Filter notes">
-    <select id="drop-down">
-      <option value="byEdited">Sort by last edited</option>
-      <option value="byCreated">Sort by recently created</option>
-      <option value="alphabeticaly">Sort alphabeticaly</option>
-    </select>
-    <input id="title-text" type="text" placeholder="Title">
-    <input id="body-text" type="text" placeholder="Body field">
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">Notes App</h1>
+        <h2 class="header__subtitle">Take notes and never forget</h2>
+      </div>
+    </header>
+
+    <div class="actions">
+      <div class="actions__container">
+        <input class="input" id="search-test" type="text" placeholder="Filter notes">
+        <select class="dropdown" id="drop-down">
+          <option value="byEdited">Sort by last edited</option>
+          <option value="byCreated">Sort by recently created</option>
+          <option value="alphabeticaly">Sort alphabeticaly</option>
+        </select>
+      </div>
+    </div>
+    <!-- <input id="title-text" type="text" placeholder="Title">
+    <input id="body-text" type="text" placeholder="Body field"> -->
     <div id="notes"></div>
     <button id="create-note">Create Note</button>
     <button id="clear-notes">Clear Notes</button>
+    
     <!-- Javascript src -->
-    <script src="uuidv4.js"></script>
-    <script src="moment.js"></script>
-    <script src="notes-functions.js" charset="utf-8"></script>
-    <script src="notes-app.js" charset="utf-8"></script>
+    <script src="scripts/uuidv4.js"></script>
+    <script src="scripts/moment.js"></script>
+    <script src="scripts/notes-functions.js" charset="utf-8"></script>
+    <script src="scripts/notes-app.js" charset="utf-8"></script>
     <!-- END -->
   </body>
 </html>
