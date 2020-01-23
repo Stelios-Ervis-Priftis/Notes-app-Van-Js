@@ -102,15 +102,23 @@ const sortNotes = (notes, sortBy) => {
 
 // Render application notes step 4
 const renderNotes = (notes, filters) => {
+    const noteEl = document.querySelector('#notes')
     notes = sortNotes(notes, filters.sortBy)
     const filteredNotes = notes.filter((note) => note.title.toLowerCase().includes(filters.searchText.toLowerCase()))
 
-    document.querySelector('#notes').innerHTML = ''
+    noteEl.innerHTML = ''
 
-    filteredNotes.forEach((note) => {
-        const noteTitle = generateNoteDOM(note)
-        document.querySelector('#notes').appendChild(noteTitle)
-    })
+    if (filteredNotes.length > 0) {
+        filteredNotes.forEach((note) => {
+            const noteTitle = generateNoteDOM(note)
+            noteEl.appendChild(noteTitle)
+        })
+    } else {
+        const emptyMessage = document.createElement('p')
+        emptyMessage.textContent = 'No notes available'
+        emptyMessage.classList.add('empty-message')
+        noteEl.appendChild(emptyMessage)
+    }
 }
 
 // Generate the last edited message
