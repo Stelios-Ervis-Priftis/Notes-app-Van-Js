@@ -40,26 +40,28 @@ const removeNote = (id) => {
 
 // Generate the DOM structure for a note step 3
 const generateNoteDOM = (note) => {
-    const noteEl = document.createElement('div')
-    const textEl = document.createElement('a')
-    const button = document.createElement('button')
+    const noteEl = document.createElement('a')
+    const textEl = document.createElement('p')
+    const statusEl = document.createElement('p')
 
-    // Setup the remove note button
-    button.textContent = 'x'
-    noteEl.appendChild(button);
-    button.addEventListener('click', () => {
-        removeNote(note.id)
-        saveNotes(note)
-        renderNotes(notes, filters)
-    })    
     // Setup the note title text
     if (note.title.length > 0) {
         textEl.textContent = note.title
     } else {
         textEl.textContent = 'Unnamed note'
     }
-    textEl.setAttribute('href', `/edit.html#${note.id}`)    
+    noteEl.classList.add('list-item__title')
     noteEl.appendChild(textEl)
+
+    // Setup the link
+    noteEl.setAttribute('href', `/edit.html#${note.id}`)
+    noteEl.classList.add('list-item')
+
+    // Setup the status message
+    statusEl.textContent = generateLastEdited(note.upDateAt)
+    statusEl.classList.add('list-item__subtitle')
+    noteEl.appendChild(statusEl)
+
     return noteEl
 }
 

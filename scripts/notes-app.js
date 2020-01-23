@@ -23,10 +23,10 @@ document.querySelector('#create-note').addEventListener('click', (e) => {
   location.assign(`/edit.html#${id}`)
 })
 
-document.querySelector('#clear-notes').addEventListener('click', (e) => {
-  localStorage.clear('notes')
-  renderNotes(notes, filters)
-})
+// document.querySelector('#clear-notes').addEventListener('click', (e) => {
+//   localStorage.clear('notes')
+//   renderNotes(notes, filters)
+// })
 
 document.querySelector('#search-test').addEventListener('input', (e) => {
   filters.searchText = e.target.value
