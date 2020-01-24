@@ -20,16 +20,9 @@ button {
   cursor: pointer;
 }
 
-a {
-    background-color: #396684;
+.button--secondary a {
     color: white;
     text-decoration: none;
-    border: 0.1rem solid;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-}
-a:hover {
-    background-color: #43799c;
 }
 
 /* Container */
@@ -169,6 +162,7 @@ a:hover {
 
 .list-item__title {
     font-size: 1.8rem;
+    border-radius: 0.5rem;
     /* margin-bottom: .4rem */
 }
 
