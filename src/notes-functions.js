@@ -1,5 +1,3 @@
-'use strict'
-
 // Defining Functions for the note app
 
 // Read existing notes from localstorage step 1

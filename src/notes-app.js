@@ -1,5 +1,3 @@
-'use strict'
-
 // Using the Functions that we have define on "notes-functions.js"
 
 // Dom - Document Object Model
@@ -9,7 +7,6 @@ const filters = {
   searchText: '',
   sortBy: 'byEdited'
 }
-
 
 
 renderNotes(notes, filters)
